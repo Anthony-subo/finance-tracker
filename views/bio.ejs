@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio page</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Bio Page</h1>
+        <form action="/save-bio" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+            <label for="name">Enter your name:</label>
+            <input type="text" id="name" name="name" required><br>
+            </div>
+            <div class="form-group">
+            <label for="profilepic">Profile picture:</label>
+            <input type="file" id="profilepic" name="profilepic" accept="image/*" required><br>
+            </div>
+            <div class="form-group">
+            <label for="salary">Salary:</label>
+            <input type="number" id="salary" name="salary" required><br>
+            </div>
+    
+            <button type="submit">Save Bio</button>
+        </form>
+    </div>
+   
+</body>
+</html>
+
+

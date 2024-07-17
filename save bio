@@ -1,0 +1,23 @@
+// Save Bio Information
+app.post("/save-bio", upload.single('profilepic'), async (req, res) => {
+    try {
+        const username = req.body.name;
+        const profilePic = req.file ? req.file.path : null;
+        const salary = req.body.salary;
+
+        const user = await collection.findOneAndUpdate(
+            { name: username },
+            { profilePic: profilePic, salary: salary },
+            { new: true }
+        );
+
+        if (user) {
+            res.send('Bio information updated successfully');
+        } else {
+            res.send('User not found');
+        }
+    } catch (error) {
+        console.error("Error saving bio information:", error);
+        res.send('Error saving bio information');
+    }
+});

@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="profile">
+            <img src="/uploads/<%= profilePic %>" alt="Profile Picture">
+            <h2><%= name %></h2>
+        </div>
+        <div class="info">
+            <p>Balance: $<%= salary %></p> <!-- Assuming salary is stored in dollars -->
+            <button><a href="/logout">Log Out</a></button>
+        </div>
+        <div class="charts">
+            <canvas id="balanceChart"></canvas>
+            <canvas id="expenseChart"></canvas>
+        </div>
+        <div class="expenses">
+            <form id="expenseForm">
+                <input type="text" id="expenseName" placeholder="Expense Name">
+                <input type="number" id="expenseAmount" placeholder="Amount">
+                <input type="color" id="expenseColor">
+                <button type="submit">Add Expense</button>
+            </form>
+        </div>
+        <div class="annual-graph">
+            <canvas id="annualGraph"></canvas>
+        </div>
+    </div>
+
+    <script src="/scripts.js"></script>
+</body>
+</html>
